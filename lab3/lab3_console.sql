@@ -44,8 +44,9 @@ select name from student,takes,course
 where student.id=takes.id and takes.course_id=course.course_id and course.dept_name='Comp. Sci.' and (grade='A' or grade='A-')
 order by name asc;
 
-select distinct name from advisor,student,takes
-where advisor.s_id=student.id and advisor.s_id=takes.id and grade not in ('A-','A','B+','B');
+select distinct instructor.name from instructor,advisor,(select student.id,name from student,takes
+where student.id=takes.id and grade not in ('A-','A','B+','B')) as sub1
+where advisor.s_id=sub1.id and instructor.id=advisor.i_id;
 
 select dept_name from student
 where dept_name not in (select dept_name from student,takes

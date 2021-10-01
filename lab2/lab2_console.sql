@@ -99,3 +99,45 @@ DELETE FROM customer WHERE id=1;
 
 
 
+
+INSERT INTO students values
+                            ('Balgaziyev Bauyrzhan',18,'2003-04-08','male',5.00,'good student',true,NULL),
+                            ('Askarov Nurbol',18,'2002-10-03','male',4.53,'great student',false,NULL),
+                            ('Amirzhan Abulkhair',18,'2003-06-24','male',4.00,'goot artist',false,NULL),
+                            ('Issanov Azat',19,'2002-09-20','male',3.64,'nice musician',true,NULL);
+INSERT INTO instructors values
+                               ('Askar',true),
+                               ('Gaukhar',false),
+                               ('Elzhan',true);
+INSERT INTO work_exp values
+                            ('Askar','36 school'),
+                            ('Askar','25 school'),
+                            ('Elzhan','27 school'),
+                            ('Elzhan','38 school'),
+                            ('Elzhan','41 school'),
+                            ('Elzhan','uStudy'),
+                            ('Gaukhar','36 school'),
+                            ('Gaukhar','27 school');
+INSERT INTO languages values
+                            ('Askar','kazakh'),
+                            ('Askar','russian'),
+                            ('Elzhan','english'),
+                            ('Elzhan','kazakh'),
+                            ('Elzhan','russian'),
+                            ('Gaukhar','russian'),
+                            ('Gaukhar','spanish');
+INSERT INTO lesson_participants values
+                                       ('Algebra','Askar',341),
+                                       ('Algebra','Elzhan',321),
+                                       ('Geometry','Askar',372),
+                                       ('Linear algebra','Gaukhar',423),
+                                       ('Calculus','Elzhan',542);
+INSERT INTO studying_students values
+                                     ('Askarov Nurbol','Algebra','Askar'),
+                                     ('Askarov Nurbol','Geometry','Askar'),
+                                     ('Issanov Azat','Algebra','Elzhan'),
+                                     ('Amirzhan Abulkhair','Algebra','Elzhan'),
+                                     ('Balgaziyev Bauyrzhan','Calculus','Elzhan'),
+                                     ('Amirzhan Abulkhair','Calculus','Elzhan'),
+                                     ('Askarov Nurbol','Calculus','Elzhan'),
+                                     ('Balgaziyev Bauyrzhan','Linear algebra','Gaukhar');
