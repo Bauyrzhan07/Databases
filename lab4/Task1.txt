@@ -1,0 +1,10 @@
+a)What are the main phases in the database design? What is done on each development phase?
+1.The first phase is characterizing the data needs to users. On this phase database developer collects all requirements.
+2.The second phase is to choose the data model which will be used in developing in database application. In this phase
+the database developer translates all the requirements collected in the first phase into the conceptual schema.
+3.Then the designer should review the scheme whether it meets to functional requirements.
+4.The last phase of designing the database consists of two parts:logical-design phase and physical design phase. In the
+former phase the designer maps the conceptual schema into relational schema. In the latter phase designer specifies
+physical features of database, such as file organization and choice of index structures.
+b)The ER(Entity Relation) data model is one of the database designs. It consists of three basic concepts:entity sets,relation
+sets,attributes.
