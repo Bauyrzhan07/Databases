@@ -226,30 +226,19 @@ CREATE PROCEDURE benefits2(id INT) AS $$
 LANGUAGE PLPGSQL;
 
 --Task 5
-CREATE TABLE members(
-    memid INT PRIMARY KEY,
-    surname VARCHAR(200),
-    firstname VARCHAR(200),
-    address VARCHAR(300),
-    zipcode INT,
-    telephone VARCHAR(20),
-    recomendedby INT REFERENCES members(memid),
-    joindate TIMESTAMP
-);
-
-CREATE TABLE bookings(
-    facid INT REFERENCES facilities(facid),
-    memid INT REFERENCES members(memid),
-    starttime TIMESTAMP,
-    slots INT,
-    PRIMARY KEY (facid,memid)
-);
-
-CREATE TABLE facilities(
-    facid INT PRIMARY KEY,
-    name VARCHAR(100),
-    membercost NUMERIC,
-    guestcost NUMERIC,
-    initialoutlay NUMERIC,
-    monthlymaintenance NUMERIC
-);
+WITH RECURSIVE recommenders(recommender, member) AS (
+    SELECT recommendedby, memid
+    FROM cd.members
+    UNION ALL
+    SELECT cd.member.recommendedby, recommenders.member
+    FROM recommenders
+             INNER JOIN cd.members
+                        ON cd.members.memid = recommenders.recommender
+)
+SELECT recommenders.member member, recommenders.recommender, cd.members.firstname, cd.members.surname
+FROM recommenders
+         INNER JOIN cd.members
+                    ON recommenders.recommender = cd.members.memid
+WHERE recommenders.member = 22
+   OR recommenders.member = 12
+ORDER BY recommenders.member, recommenders.recommender DESC
