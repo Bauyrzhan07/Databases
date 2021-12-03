@@ -1,0 +1,4 @@
+Here is my realization of given project about Package delivery company. Here is my database, its ERD and implementation of this diagram through some DDL and DML commands. All commands have splitted down to three .sql files .
+First we have DDL file where we have commands to create tables,relations and indexes.
+Then we have INSERTS file. As its name says here we have all the Insert command by which I filled my database with some practise data in order to check whether everything working properly.
+And the last .sql file is called "SELECTS". Hence there was given a task where we should test our database by making some selects. Inside you can find select commands for each task given.
